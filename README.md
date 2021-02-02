@@ -14,3 +14,20 @@
   - Hangman
   - Letters Found
   - Letters Used
+
+### Architecture
+
+- Separate logic and io(input/outuput):
+  - Input Keyboard
+  - Output screen (terminal)
+- Isolate dictionnary file
+
+### Packages
+
+- hangman (game logic)
+- dictionnary (words)
+- main
+
+### Bonus?
+
+- Unit Testing
