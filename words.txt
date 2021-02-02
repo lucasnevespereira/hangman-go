@@ -1,0 +1,10 @@
+Banane
+Vert
+Philosophie
+Programmation
+Cheval
+Ordinateur
+Tigre
+Livre
+Bouteille
+Console
