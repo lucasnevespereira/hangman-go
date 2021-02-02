@@ -13,7 +13,7 @@ var reader = bufio.NewReader(os.Stdin)
 func ReadGuess() (guess string, err error) {
 	valid := false
 	for !valid {
-		fmt.Print("What is your letter ?")
+		fmt.Print("What is your letter ? ")
 		guess, err = reader.ReadString('\n')
 		if err != nil {
 			return guess, err
