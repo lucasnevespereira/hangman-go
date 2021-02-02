@@ -1,6 +1,9 @@
 package hangman
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 // Game => Structre of the Game
 type Game struct {
@@ -12,7 +15,10 @@ type Game struct {
 }
 
 // New inits the Game
-func New(turns int, word string) *Game {
+func New(turns int, word string) (*Game, error) {
+	if len(word) < 3 {
+		return nil, fmt.Errorf("Word '%s' must be at least 3 characters longs. got=%v", word, len(word))
+	}
 	// Remove spaces from word
 	letters := strings.Split(strings.ToUpper(word), "")
 	// Hide word with "_"
@@ -29,7 +35,7 @@ func New(turns int, word string) *Game {
 		TurnsLeft:    turns,
 	}
 
-	return g
+	return g, nil
 }
 
 // MakeAGuess allows users to make a guess
