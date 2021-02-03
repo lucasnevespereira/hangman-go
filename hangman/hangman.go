@@ -41,6 +41,12 @@ func New(turns int, word string) (*Game, error) {
 // MakeAGuess allows users to make a guess
 func (g *Game) MakeAGuess(guess string) {
 	guess = strings.ToUpper(guess)
+
+	switch g.State {
+	case "won", "lost":
+		return
+	}
+
 	if letterInWord(guess, g.UsedLetters) {
 		g.State = "alreadyGuessed"
 	} else if letterInWord(guess, g.Letters) {
